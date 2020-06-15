@@ -1,0 +1,32 @@
+<div class="mt-4 col-12">
+    <div class="col-12">
+        <h2>Calculadora</h2>
+        <hr>
+    </div>
+
+    <div class="mt-4 mb-4 col-12">
+        <div class="card text-center">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" routerLink="suma">Suma</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active" routerLink="resta">Resta</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active"  routerLink="division">Division</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active"  routerLink="multiplicacion">Multiplicacion</a>
+                  </li>
+              </ul>
+            </div>
+            <div class="card-body">
+                <router-outlet></router-outlet>
+            </div>
+          </div>
+    </div>
+
+
+</div>
