@@ -18,6 +18,8 @@ import { SumaComponent } from './componentes/suma/suma.component';
 import { RestaComponent } from './componentes/resta/resta.component';
 import { MultiplicacionComponent } from './componentes/multiplicacion/multiplicacion.component';
 import { DivisionComponent } from './componentes/division/division.component';
+import { Determinante2x2Component } from './componentes/determinante2x2/determinante2x2.component';
+import { Determinante3x3Component } from './componentes/determinante3x3/determinante3x3.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { DivisionComponent } from './componentes/division/division.component';
     SumaComponent,
     RestaComponent,
     MultiplicacionComponent,
-    DivisionComponent
+    DivisionComponent,
+    Determinante2x2Component,
+    Determinante3x3Component
   ],
   imports: [
     BrowserModule,

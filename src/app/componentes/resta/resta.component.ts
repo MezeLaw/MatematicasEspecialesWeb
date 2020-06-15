@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-resta',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaComponent implements OnInit {
 
-  constructor() { }
+  form : FormGroup;
+
+  constructor( private fb : FormBuilder) {
+    this.crearForm();
+  }
 
   ngOnInit() {
   }
 
+
+  crearForm(){
+    this.form = this.fb.group({
+      p1k: [],
+      p1j: [],
+      p2k: [],
+      p2j: []
+    })
+  }
+
+  restar(){
+    console.log("restando.. xD");
+  }
 }

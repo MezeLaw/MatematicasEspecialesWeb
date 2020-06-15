@@ -9,6 +9,8 @@ import { SumaComponent } from './componentes/suma/suma.component';
 import { RestaComponent } from './componentes/resta/resta.component';
 import { MultiplicacionComponent } from './componentes/multiplicacion/multiplicacion.component';
 import { DivisionComponent } from './componentes/division/division.component';
+import { Determinante2x2Component } from './componentes/determinante2x2/determinante2x2.component';
+import { Determinante3x3Component } from './componentes/determinante3x3/determinante3x3.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,8 @@ const routes: Routes = [
       { path: "resta", component : RestaComponent},
       { path: "multiplicacion", component : MultiplicacionComponent},
       { path: "division", component : DivisionComponent},
+      { path: "determinante2x2", component : Determinante2x2Component},
+      { path: "determinante3x3", component : Determinante3x3Component},
       { path: "**", pathMatch: "full", redirectTo: "suma"}
       
     ]},
