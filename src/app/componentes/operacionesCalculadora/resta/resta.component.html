@@ -1,6 +1,6 @@
 <div class="mt-4 mb-4 col-12">
 
-    <div  class="alert alert-danger text-center mt-4 mb-4 animate__animated animate__fadeIn" role="alert">
+    <div *ngIf="requestError" class="alert alert-danger text-center mt-4 mb-4 animate__animated animate__fadeIn" role="alert">
         Ocurrio un error al intentar realizar la operacion, intentelo nuevamente.
     </div>
 
@@ -11,9 +11,9 @@
             </div>
             <div class="row col-12 animate__animated animate__fadeIn">
                 
-                <input type="number" class="form-control col-2" formControlName="p1k">
+                <input type="number" class="form-control col-3" formControlName="p1k">
                 <label class="col-2"> + </label>
-                <input type="number" class="form-control col-2" formControlName="p1j">
+                <input type="number" class="form-control col-3" formControlName="p1j">
                 <label class="col-2"> j </label> 
             </div>
         </div>
@@ -24,31 +24,33 @@
             </div>
             <div class="row col-12 animate__animated animate__fadeIn">
                 
-                <input type="number" class="form-control col-2" formControlName="p2k">
+                <input type="number" class="form-control col-3" formControlName="p2k">
                 <label class="col-2"> + </label>
-                <input type="number" class="form-control col-2" formControlName="p2j">
+                <input type="number" class="form-control col-3" formControlName="p2j">
                 <label class="col-2"> j </label> 
             </div>
         </div>
 
-        <div class="row">
+        <div class="row animate__animated animate__fadeIn">
             <div class="col-lg-12"> 
-                <button type="submit" class="btn btn-primary animate__animated animate__fadeIn float-right"><i class="fas fa-minus"></i> Calcular resta</button>
+                <button type="submit" class="btn btn-primary  float-right" [disabled]="invalidP1k || invalidP1j || invalidP2k || invalidP2j" ><i class="fas fa-minus"></i> Restar</button>
             </div>
         </div>
 
     </form>
 
-    <div class="text-center mt-4 mb-4">
+    <div *ngIf="isLoading" class="text-center mt-4 mb-4">
         <div class="spinner-border" role="status"> 
         </div>
         <h5>Calculando, espere por favor</h5>
       </div>
 
-      <div class="mt-4 mb-4 col-12">
+      <div *ngIf="requestSuccess" class="mt-4 mb-4 col-12">
         <hr>
           <div class="alert alert-success animate__animated animate__fadeIn" role="alert">
-              <h3 class="alert-heading">Resultado: {{ result }} </h3>
+              <h4 class="alert-heading">Resultado</h4>
+              <br>
+              <h4> {{ result }} </h4>
             </div>
       </div>
 

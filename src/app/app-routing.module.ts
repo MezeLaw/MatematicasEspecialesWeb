@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { PrimerOrdenComponent } from './componentes/primer-orden/primer-orden.component';
 import { SegundoOrdenComponent } from './componentes/segundo-orden/segundo-orden.component';
 import { CalculadoraComponent } from './componentes/calculadora/calculadora.component';
-import { SumaComponent } from './componentes/suma/suma.component';
-import { RestaComponent } from './componentes/resta/resta.component';
-import { MultiplicacionComponent } from './componentes/multiplicacion/multiplicacion.component';
-import { DivisionComponent } from './componentes/division/division.component';
-import { Determinante2x2Component } from './componentes/determinante2x2/determinante2x2.component';
-import { Determinante3x3Component } from './componentes/determinante3x3/determinante3x3.component';
+import { Determinante2x2Component } from './componentes/operacionesCalculadora/determinante2x2/determinante2x2.component';
+import { Determinante3x3Component } from './componentes/operacionesCalculadora/determinante3x3/determinante3x3.component';
+import { DivisionComponent } from './componentes/operacionesCalculadora/division/division.component';
+import { MultiplicacionComponent } from './componentes/operacionesCalculadora/multiplicacion/multiplicacion.component';
+import { RestaComponent } from './componentes/operacionesCalculadora/resta/resta.component';
+import { SumaComponent } from './componentes/operacionesCalculadora/suma/suma.component';
 
 
 const routes: Routes = [
