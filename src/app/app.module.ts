@@ -7,9 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { HomeComponent } from './componentes/home/home.component';
-import { CreadoresComponent } from './componentes/creadores/creadores.component';
-import { LaplacePrimerOrdenComponent } from './componentes/laplace-primer-orden/laplace-primer-orden.component';
-import { LaplaceSegundoOrdenComponent } from './componentes/laplace-segundo-orden/laplace-segundo-orden.component';
+import { CreadoresComponent } from './componentes/creadores/creadores.component'; 
 import { PrimerOrdenComponent } from './componentes/primer-orden/primer-orden.component';
 import { SegundoOrdenComponent } from './componentes/segundo-orden/segundo-orden.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -26,9 +24,7 @@ import { RestaComponent } from './componentes/operacionesCalculadora/resta/resta
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    CreadoresComponent,
-    LaplacePrimerOrdenComponent,
-    LaplaceSegundoOrdenComponent,
+    CreadoresComponent, 
     PrimerOrdenComponent,
     SegundoOrdenComponent,
     CalculadoraComponent,

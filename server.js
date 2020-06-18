@@ -3,11 +3,11 @@ const path = require('path');
 const app = express();
 
 // Serve static files....
-app.use(express.static(__dirname + '/dist/matematicasespeciales'));
+app.use(express.static(__dirname + '/dist/matematicasEspeciales'));
 
 // Send all requests to index.html
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/matematicasespeciales/index.html'));
+  res.sendFile(path.join(__dirname + '/dist/matematicasEspeciales/index.html'));
 });
 
 // default Heroku PORT
