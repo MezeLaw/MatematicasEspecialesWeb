@@ -6,14 +6,14 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 export class CalculatorService {
 
-  apiUrl : string = "";
-  //apiUrl : string ="";
-  sumarUrl : string = "";
-  restarUrl : string = "";
-  multiplicarUrl : string = "";
-  dividirUrl  : string = "";
-  determinante2x2Url : string = "";
-  determinante3x3Url : string = "";
+  //apiUrl : string = "http://127.0.0.1:5000/";
+  apiUrl : string ="https://floating-hamlet-80678.herokuapp.com/";
+  sumarUrl : string = "sumaCompleja";
+  restarUrl : string = "restaCompleja";
+  multiplicarUrl : string = "multiplicacionCompleja";
+  dividirUrl  : string = "divisionCompleja";
+  determinante2x2Url : string = "determinante2x2";
+  determinante3x3Url : string = "determinante3x3";
 
   constructor( private http : HttpClient) { }
 
@@ -77,13 +77,13 @@ export class CalculatorService {
 
   }
 
-  hallarDeterminante2x2(){
+  hallarDeterminante2x2(a1 : any, a2 : any, b1 : any, b2 : any){
 
     let params = new HttpParams();
-    params = params.set("", "");
-    params = params.set("", "");
-    params = params.set("", "");
-    params = params.set("", "");
+    params = params.set("A1", a1);
+    params = params.set("A2", a2);
+    params = params.set("B1", b1);
+    params = params.set("B2", b2);
 
     return this.http.get(`${this.apiUrl}${this.determinante2x2Url}`, { params : params })
     .pipe( result => {
@@ -92,20 +92,20 @@ export class CalculatorService {
 
   }
 
-  hallarDeterminante3x3(){
+  hallarDeterminante3x3(a1 : any, a2 : any, a3 : any, b1 : any, b2 : any, b3 : any, c1 : any, c2 : any, c3 : any){
 
     let params = new HttpParams();
-    params = params.set("", "");
-    params = params.set("", "");
-    params = params.set("", ""); 
+    params = params.set("A1", a1);
+    params = params.set("A2", a2);
+    params = params.set("A3", a3); 
 
-    params = params.set("", "");
-    params = params.set("", "");
-    params = params.set("", ""); 
+    params = params.set("B1", b1);
+    params = params.set("B2", b2);
+    params = params.set("B3", b3); 
 
-    params = params.set("", "");
-    params = params.set("", "");
-    params = params.set("", ""); 
+    params = params.set("C1", c1);
+    params = params.set("C2", c2);
+    params = params.set("C3", c3); 
 
     return this.http.get(`${this.apiUrl}${this.determinante3x3Url}`, { params : params })
     .pipe( result => {

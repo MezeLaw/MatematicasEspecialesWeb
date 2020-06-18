@@ -34,14 +34,20 @@ export class Determinante2x2Component implements OnInit {
   }
 
   calcularDeterminante(){
+
+    let a1 = this.form.get('A1').value; 
+    let a2 = this.form.get('A2').value; 
+    let b1 = this.form.get('B1').value; 
+    let b2 = this.form.get('B2').value; 
+
     this.requestError = false;
     this.requestSuccess = false;
     this.isLoading = true;
     this.result = '';
 
-    this.cs.hallarDeterminante2x2()
+    this.cs.hallarDeterminante2x2(a1, a2, b1, b2)
     .subscribe( result=> {
-      this.result = result;
+      this.result = result['response'];
       this.requestError = false;
       this.requestSuccess = true;
       this.isLoading = false;

@@ -1,32 +1,32 @@
 <div class="mt-4 mb-4 col-12">
 
-    <div  class="alert alert-danger text-center mt-4 mb-4 animate__animated animate__fadeIn" role="alert">
+    <div *ngIf="requestError" class="alert alert-danger text-center mt-4 mb-4 animate__animated animate__fadeIn" role="alert">
         Ocurrio un error al intentar realizar la operacion, intentelo nuevamente.
     </div>
 
-    <form [formGroup]="form" (ngSubmit)="multiplicar();">
+    <form [formGroup]="form" (ngSubmit)="calcularDeterminante();">
         <div class="form-group">
             <div class="row col-12 animate__animated animate__fadeIn">
                 <h5>Matriz 3x3</h5>
             </div>
             <div class="row col-12 animate__animated animate__fadeIn">
                 
-                <input type="number" class="form-control col-sm-2" formControlName="a1" placeholder="A1">
+                <input type="number" class="form-control col-sm-2" formControlName="A1" placeholder="A1">
                 <label class="col-sm-3"> </label>
-                <input type="number" class="form-control col-sm-2" formControlName="a2" placeholder="A2">
+                <input type="number" class="form-control col-sm-2" formControlName="A2" placeholder="A2">
                 <label class="col-sm-3"> </label>
-                <input type="number" class="form-control col-sm-2" formControlName="a3" placeholder="A3">                
+                <input type="number" class="form-control col-sm-2" formControlName="A3" placeholder="A3">                
             </div>
         </div>
 
         <div class="form-group">
             <div class="row col-12 animate__animated animate__fadeIn">
                 
-                <input type="number" class="form-control col-sm-2" formControlName="b1" placeholder="B1">
+                <input type="number" class="form-control col-sm-2" formControlName="B1" placeholder="B1">
                 <label class="col-sm-3"> </label>
-                <input type="number" class="form-control col-sm-2" formControlName="b2" placeholder="B2">
+                <input type="number" class="form-control col-sm-2" formControlName="B2" placeholder="B2">
                 <label class="col-sm-3"> </label>
-                <input type="number" class="form-control col-sm-2" formControlName="b3" placeholder="B3">
+                <input type="number" class="form-control col-sm-2" formControlName="B3" placeholder="B3">
             </div>
         </div>
 
@@ -34,29 +34,29 @@
         <div class="form-group">
             <div class="row col-12 animate__animated animate__fadeIn">
                 
-                <input type="number" class="form-control col-sm-2" formControlName="c1" placeholder="C1">
+                <input type="number" class="form-control col-sm-2" formControlName="C1" placeholder="C1">
                 <label class="col-sm-3"> </label>
-                <input type="number" class="form-control col-sm-2" formControlName="c2" placeholder="C2">
+                <input type="number" class="form-control col-sm-2" formControlName="C2" placeholder="C2">
                 <label class="col-sm-3"> </label>
-                <input type="number" class="form-control col-sm-2" formControlName="c3" placeholder="C3">
+                <input type="number" class="form-control col-sm-2" formControlName="C3" placeholder="C3">
             </div>
         </div>
 
-        <div class="row">
+        <div class="row animate__animated animate__fadeIn">
             <div class="col-sm-12"> 
-                <button type="submit" class="btn btn-primary animate__animated animate__fadeIn float-right">  Calcular determinante</button>
+                <button type="submit" class="btn btn-primary float-center" [disabled]="invalidA1 || invalidA2 || invalidA3 || invalidB1 || invalidB2 || invalidB3 || invalidC1 || invalidC2 || invalidC3">  Calcular determinante</button>
             </div>
         </div>
 
     </form>
 
-    <div  class="text-center mt-4 mb-4">
+    <div *ngIf="isLoading" class="text-center mt-4 mb-4">
         <div class="spinner-border" role="status"> 
         </div>
         <h5>Calculando, espere por favor</h5>
       </div>
 
-      <div class="mt-4 mb-4 col-12">
+      <div *ngIf="requestSuccess" class="mt-4 mb-4 col-12">
         <hr>
           <div class="alert alert-success animate__animated animate__fadeIn" role="alert">
             <h4 class="alert-heading">Resultado</h4>
