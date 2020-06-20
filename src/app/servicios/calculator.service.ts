@@ -6,8 +6,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 export class CalculatorService {
 
-  //apiUrl : string = "http://127.0.0.1:5000/";
-  apiUrl : string ="https://floating-hamlet-80678.herokuapp.com/";
+  apiUrl : string = "http://127.0.0.1:5000/";
+  //apiUrl : string ="https://floating-hamlet-80678.herokuapp.com/";
   sumarUrl : string = "sumaCompleja";
   restarUrl : string = "restaCompleja";
   multiplicarUrl : string = "multiplicacionCompleja";
@@ -21,10 +21,10 @@ export class CalculatorService {
   sumar(p1k : any, p1j : any, p2k : any, p2j : any){
 
     let params = new HttpParams();
-    params = params.set("", "");
-    params = params.set("", "");
-    params = params.set("", "");
-    params = params.set("", "");
+    params = params.set("p1k",  p1k);
+    params = params.set("p1j",  p1j);
+    params = params.set("p2k",  p2k);
+    params = params.set("p2j",  p2j);
 
     return this.http.get(`${this.apiUrl}${this.sumarUrl}`, { params : params })
     .pipe( result => {
@@ -35,10 +35,10 @@ export class CalculatorService {
   restar(p1k : any, p1j : any, p2k : any, p2j : any){
 
     let params = new HttpParams();
-    params = params.set("", "");
-    params = params.set("", "");
-    params = params.set("", "");
-    params = params.set("", "");
+    params = params.set("p1k",  p1k);
+    params = params.set("p1j",  p1j);
+    params = params.set("p2k",  p2k);
+    params = params.set("p2j",  p2j);
 
     return this.http.get(`${this.apiUrl}${this.restarUrl}`, { params : params })
     .pipe( result => {
@@ -50,10 +50,10 @@ export class CalculatorService {
   multiplicar(p1k : any, p1j : any, p2k : any, p2j : any){
 
     let params = new HttpParams();
-    params = params.set("", "");
-    params = params.set("", "");
-    params = params.set("", "");
-    params = params.set("", "");
+    params = params.set("p1k",  p1k);
+    params = params.set("p1j",  p1j);
+    params = params.set("p2k",  p2k);
+    params = params.set("p2j",  p2j);
 
     return this.http.get(`${this.apiUrl}${this.multiplicarUrl}`, { params : params })
     .pipe( result => {
@@ -65,10 +65,10 @@ export class CalculatorService {
   dividir(p1k : any, p1j : any, p2k : any, p2j : any){
 
     let params = new HttpParams();
-    params = params.set("", "");
-    params = params.set("", "");
-    params = params.set("", "");
-    params = params.set("", "");
+    params = params.set("p1k",  p1k);
+    params = params.set("p1j",  p1j);
+    params = params.set("p2k",  p2k);
+    params = params.set("p2j",  p2j);
 
     return this.http.get(`${this.apiUrl}${this.dividirUrl}`, { params : params })
     .pipe( result => {

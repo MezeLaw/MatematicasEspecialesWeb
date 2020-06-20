@@ -13,6 +13,8 @@ export class DivisionComponent implements OnInit {
   requestError : boolean;
   requestSuccess : boolean;
   result : any;
+  message : any;
+  divisorCero : boolean;
 
   form : FormGroup;
 
@@ -40,6 +42,7 @@ export class DivisionComponent implements OnInit {
     this.isLoading = true;
     this.requestError = false;
     this.requestSuccess = false;
+    this.divisorCero = false;
     this.result = '';
 
     let p1k = this.form.get('p1k').value;
@@ -49,10 +52,19 @@ export class DivisionComponent implements OnInit {
 
     this.cs.dividir(p1k, p1j, p2k, p2j)
     .subscribe( result=>{
-      this.result = result['response'];
-      this.requestSuccess = true;
-      this.requestError = false;
-      this.isLoading = false;
+      if(result['code']=700){
+        this.requestSuccess = false;
+        this.requestError = false;
+        this.divisorCero = true;
+        this.message = result['response'];
+        this.isLoading = false;
+      } else {
+        this.result = result['response'];
+        this.requestSuccess = true;
+        this.requestError = false;
+        this.isLoading = false;
+      }
+      
     }, (error)=>{
       this.requestError = true;
       this.requestSuccess = false;

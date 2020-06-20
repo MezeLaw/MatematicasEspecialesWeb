@@ -22,8 +22,8 @@ export class HomeComponent implements OnInit {
         console.log("Respuesta del summar...")
         console.log(result)
       this.summary = result['response'];
-    }, (error)=>{
-      alert('Error al conectar al API, intentelo nuevamente!')
+    }, (error)=>{ 
+      console.log('Error al intentar conectar al API, intentelo nuevamente.');
     })
   }
 

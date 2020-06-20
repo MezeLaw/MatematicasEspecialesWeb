@@ -5,8 +5,8 @@ import {  HttpClient, HttpParams } from '@angular/common/http';
   providedIn: 'root'
 })
 export class IntegrateService {
-  //apiUrl : string = 'http://127.0.0.1:5000/';
-  apiUrl : string = 'https://floating-hamlet-80678.herokuapp.com/';
+  apiUrl : string = 'http://127.0.0.1:5000/';
+  //apiUrl : string = 'https://floating-hamlet-80678.herokuapp.com/';
   primerOrdenUrl : string = 'calcularPrimerOrden';
   segundoOrdenUrl : string = 'calcularSegundoOrden';
   summaryUrl : string = 'summary';

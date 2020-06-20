@@ -44,7 +44,7 @@
 
         <div class="row animate__animated animate__fadeIn">
             <div class="col-sm-12"> 
-                <button type="submit" class="btn btn-primary float-center" [disabled]="invalidA1 || invalidA2 || invalidA3 || invalidB1 || invalidB2 || invalidB3 || invalidC1 || invalidC2 || invalidC3">  Calcular determinante</button>
+                <button type="submit" class="btn btn-primary float-center" [disabled]="invalidA1 || invalidA2 || invalidA3 || invalidB1 || invalidB2 || invalidB3 || invalidC1 || invalidC2 || invalidC3 || isLoading">  Calcular determinante</button>
             </div>
         </div>
 
@@ -56,7 +56,7 @@
         <h5>Calculando, espere por favor</h5>
       </div>
 
-      <div *ngIf="requestSuccess" class="mt-4 mb-4 col-12">
+      <div *ngIf="requestSuccess && !isLoading" class="mt-4 mb-4 col-12">
         <hr>
           <div class="alert alert-success animate__animated animate__fadeIn" role="alert">
             <h4 class="alert-heading">Resultado</h4>
